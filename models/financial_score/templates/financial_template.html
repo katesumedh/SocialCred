@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SocialCred</title>
+  <style>
+    /* General Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(140deg, #fff9fa, #f5e6e6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Container Styling */
+    .container {
+      background-color: #fff;
+      max-width: 800px;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      width: 90%;
+      padding: 40px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    h2 {
+      color: #82373b;
+      margin-bottom: 15px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    h4 {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    /* Form Group Styling */
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #82373b;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input[type="number"]:focus {
+      border-color: #82373b;
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+
+    /* Button Styling */
+    .btn-primary {
+      background-color: #82373b;
+      color: #fff;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 25px;
+    }
+
+    .btn-primary:hover {
+      background-color: #4e1518;
+      transform: translateY(-3px);
+    }
+
+    .btn-primary:active {
+      background-color: #4e1518;
+      transform: translateY(0);
+    }
+
+    /* Result Styling */
+    .result {
+      margin-top: 30px;
+      background-color: #82373b;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #82373b;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .result h3 {
+      color: #333;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .result p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #82373b;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to SocialCred</h2>
+    <p class="subtitle">"A great credit score is your gateway to financial freedom. Let’s calculate yours!"</p>
+    <h4>Enter your financial details to complete Step 1</h4>
+    <form action="financial_score/predict" method="POST">
+      <!-- Collecting 17 features -->
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="annual_income">Annual Income:</label>
+        <input type="number" id="annual_income" name="annual_income" required>
+      </div>
+
+      <div class="form-group">
+        <label for="monthly_salary">Monthly Inhand Salary:</label>
+        <input type="number" id="monthly_salary" name="monthly_salary" required>
+      </div>
+
+      <div class="form-group">
+        <label for="num_bank_accounts">Number of Bank Accounts:</label>
+        <input type="number" id="num_bank_accounts" name="num_bank_accounts" required>
+      </div>
+
+      <div class="form-group">
+        <label for="num_credit_cards">Number of Credit Cards:</label>
+        <input type="number" id="num_credit_cards" name="num_credit_cards" required>
+      </div>
+
+      <div class="form-group">
+        <label for="interest_rate">Interest Rate:</label>
+        <input type="number" step="0.01" id="interest_rate" name="interest_rate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="num_loans">Number of Loans:</label>
+        <input type="number" id="num_loans" name="num_loans" required>
+      </div>
+
+      <div class="form-group">
+        <label for="delay_date">Delay Date for Credit:</label>
+        <input type="number" id="delay_date" name="delay_date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="delayed_payments">Number of Delayed Payments:</label>
+        <input type="number" id="delayed_payments" name="delayed_payments" required>
+      </div>
+
+      <div class="form-group">
+        <label for="changed_limit">Changed Limit:</label>
+        <input type="number" id="changed_limit" name="changed_limit" required>
+      </div>
+
+      <div class="form-group">
+        <label for="credit_inquiries">Number of Credit Inquiries:</label>
+        <input type="number" id="credit_inquiries" name="credit_inquiries" required>
+      </div>
+
+      <div class="form-group">
+        <label for="outstanding_debt">Outstanding Debt:</label>
+        <input type="number" id="outstanding_debt" name="outstanding_debt" required>
+      </div>
+
+      <div class="form-group">
+        <label for="credit_utilization">Credit Utilization Ratio:</label>
+        <input type="number" step="0.01" id="credit_utilization" name="credit_utilization" required>
+      </div>
+
+      <div class="form-group">
+        <label for="credit_history_age">Credit History Age:</label>
+        <input type="number" id="credit_history_age" name="credit_history_age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="emi_per_month">Total EMI per month:</label>
+        <input type="number" id="emi_per_month" name="emi_per_month" required>
+      </div>
+
+      <div class="form-group">
+        <label for="amt_month">Monthly Investment:</label>
+        <input type="number" id="amt_month" name="amt_month" required>
+      </div>
+
+      <div class="form-group">
+        <label for="monthly_balance">Monthly Balance:</label>
+        <input type="number" id="monthly_balance" name="monthly_balance" required>
+      </div>
+
+      <button type="submit" class="btn-primary">Proceed to Step 2</button>
+    </form>
+
+    {% if prediction %}
+      <div id="predictionResult" class="result">
+        <h3>Predicted Credit Score Category:</h3>
+        <p>{{ prediction }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

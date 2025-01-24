@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Information</title>
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <h1>SocialCred</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#info">Learn About Credit</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Section with Two Columns -->
+    <main>
+      <section class="main-content">
+        <!-- Left Column: Icons and Information Section -->
+        <div class="left-column">
+          <div class="icon-section">
+            <img
+              src="static/icons/credit-score-icon.jpeg"
+              alt="Credit Score Icon"
+            />
+          </div>
+
+          <!-- Credit Information Section -->
+          <section id="info">
+            <h2>Learn About Credit</h2>
+            <article class="accordion">
+              <h3 class="question">What is a Credit Report?</h3>
+              <p class="answer">
+                A credit report is a detailed record of your credit history, including information on your credit accounts, loans, credit cards, payment history, and any collections. It is used by lenders to assess your creditworthiness when you apply for credit or loans.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">What is a Credit Score?</h3>
+              <p class="answer">
+                A credit score is a numerical expression of your creditworthiness, usually ranging from 300 to 850. It is based on the information in your credit report and helps lenders determine the risk of lending to you. A higher score indicates better creditworthiness.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">Steps to Create a Credit Report</h3>
+              <p class="answer">
+                1. Collect your personal financial information, such as your bank accounts, credit cards, loans, and payment history.<br>
+                2. Request a credit report from a major credit bureau (Experian, Equifax, or TransUnion).<br>
+                3. Verify the accuracy of all the information, including payment history, credit limits, and any outstanding debts.<br>
+                4. Update your report by adding any new credit activities.<br>
+                5. Regularly review and monitor your credit report to ensure accuracy.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">Why is Credit Score Important?</h3>
+              <p class="answer">
+                Your credit score is important because it influences lenders’ decisions about whether to approve your applications for loans, credit cards, or mortgages. A higher score can lead to better terms, such as lower interest rates, while a lower score can make it more difficult to get credit and result in higher interest rates.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">How is Your Credit Score Calculated?</h3>
+              <p class="answer">
+                Credit scores are calculated based on several factors:<br>
+                1. Payment History (35%) - Your record of on-time payments and any delinquencies.<br>
+                2. Credit Utilization (30%) - The percentage of your available credit that you’re using.<br>
+                3. Length of Credit History (15%) - How long your accounts have been open.<br>
+                4. Types of Credit Used (10%) - The variety of credit accounts you have (e.g., credit cards, mortgages).<br>
+                5. Recent Inquiries (10%) - The number of recent credit applications or checks.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">How to Improve Your Credit Score</h3>
+              <p class="answer">
+                1. Pay your bills on time and avoid late payments.<br>
+                2. Keep your credit utilization ratio below 30%.<br>
+                3. Avoid opening too many new credit accounts in a short period.<br>
+                4. Regularly check your credit report for errors and dispute inaccuracies.<br>
+                5. Maintain a mix of credit types, such as credit cards and installment loans.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">Benefits of a High Credit Score</h3>
+              <p class="answer">
+                1. Easier loan approvals with lower interest rates.<br>
+                2. Higher credit limits and more favorable loan terms.<br>
+                3. Better opportunities for renting homes or apartments.<br>
+                4. Lower insurance premiums in some cases.<br>
+                5. More access to rewards programs and special offers from credit card companies.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">What to Do If Your Credit Score is Low?</h3>
+              <p class="answer">
+                If your credit score is low, consider taking the following steps:<br>
+                1. Review your credit report for any errors and dispute inaccuracies.<br>
+                2. Focus on paying off outstanding debts, especially high-interest credit card debt.<br>
+                3. Make all payments on time, and avoid missing payments.<br>
+                4. Try to reduce your credit card balances to improve your credit utilization ratio.<br>
+                5. Avoid opening new credit accounts until your score improves.
+              </p>
+            </article>
+            <article class="accordion">
+              <h3 class="question">Credit Score vs. Credit Rating vs. Credit Report</h3>
+              <p class="answer">
+                - **Credit Score**: A numerical representation of your creditworthiness, calculated based on your credit history.<br>
+                - **Credit Rating**: A broader assessment of your creditworthiness, often used by institutions to rate the creditworthiness of businesses or governments.<br>
+                - **Credit Report**: A detailed record of your credit history, including your accounts, payment history, and any negative marks such as bankruptcies or foreclosures.
+              </p>
+            </article>
+            <!-- Additional articles here -->
+          </section>
+        </div>
+
+        <!-- Right Column: User Form Section -->
+        <div class="right-column">
+          <section id="user-form">
+            <h2>Get Started</h2>
+            <form action="/submit_form" method="post">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+          <section id="get-report">
+            <a href="/financial_form">
+                <button class="free-report-btn">Get FREE Credit Report</button>
+            </a>
+        </section>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <!-- FAQ Section -->
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <article class="accordion">
+          <h3 class="question">
+            Why does my credit score keep changing?
+          </h3>
+          <p class="answer">
+            Your credit score can change due to various factors, such as changes in your credit usage (e.g., increasing your credit card balance), new credit inquiries, changes in your payment history (e.g., missing a payment), or changes in the length of your credit history. Other factors, like the credit mix and recent credit account closures, can also cause fluctuations.
+          </p>
+        </article>
+        
+        <article class="accordion">
+          <h3 class="question">
+            What is the minimum score needed in a credit report to get a personal loan? 
+          </h3>
+          <p class="answer">
+            Typically, a score of 650 or higher is needed to get a personal loan, though it can vary depending on the lender and the type of loan. Some lenders may offer loans to individuals with lower scores, but it often comes with higher interest rates. A higher credit score generally helps secure better loan terms.
+          </p>
+        </article>
+        
+        <article class="accordion">
+          <h3 class="question">
+            Can everyone access my credit report?
+          </h3>
+          <p class="answer">
+            Your credit report can only be accessed by certain entities, such as lenders, creditors, or businesses that you have agreements with (for example, a bank or a credit card company). It may also be accessed by potential employers in specific situations. You have the right to request a free copy of your credit report once a year from the major credit bureaus.
+          </p>
+        </article>
+        
+        <article class="accordion">
+          <h3 class="question">
+            What is the significance of the credit report?
+          </h3>
+          <p class="answer">
+            Your credit report is an important document that reflects your creditworthiness and financial behavior. It includes details such as your credit accounts, payment history, outstanding debts, and any public records like bankruptcies or foreclosures. Lenders, landlords, and even employers may review it to assess your financial responsibility and ability to repay debts.
+          </p>
+        </article>
+        
+        <article class="accordion">
+          <h3 class="question">
+            Who can access my credit score? 
+          </h3>
+          <p class="answer">
+            Only authorized parties like lenders, creditors, and certain businesses can access your credit score. These parties use it to assess your creditworthiness when you apply for a loan, credit card, or mortgage. You can also access your own credit score for free through various services, but others need your permission to view it.
+          </p>
+        </article>
+        
+        <article class="accordion">
+          <h3 class="question">
+            How my social media performance affects my credit score?
+          </h3>
+          <p class="answer">
+            Currently, social media does not directly affect your credit score. However, some lenders or financial institutions may consider your social media activity when making decisions in specific situations, such as assessing your character or stability. Some services may also analyze social media patterns to offer alternative credit assessments in the future.
+          </p>
+        </article>
+        
+      </section>
+    </main>
+
+    <script>
+      // JavaScript to toggle accordion
+      const questions = document.querySelectorAll('.accordion .question');
+
+// Loop through each question and add event listener for toggling answer visibility
+questions.forEach((question) => {
+  question.addEventListener('click', function() {
+    const answer = this.nextElementSibling;
+
+    // If the clicked question's answer is currently hidden, show it
+    if (answer.style.display === '' || answer.style.display === 'none') {
+      // Close all other answers
+      document.querySelectorAll('.answer').forEach((ans) => {
+        ans.style.display = 'none';
+      });
+      
+      // Open the clicked question's answer
+      answer.style.display = 'block';
+      
+      // Add active class to the clicked question
+      questions.forEach((q) => q.classList.remove('active'));
+      this.classList.add('active');
+    } else {
+      // Hide the clicked question's answer
+      answer.style.display = 'none';
+      this.classList.remove('active');
+    }
+  });
+});
+
+document.querySelector("#user-form form").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Get user input values
+  const name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+
+  if (name && email) {
+    // Save to localStorage
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+
+    // Provide feedback or success message (optional)
+    alert("Your information has been saved!");
+
+    // Optionally, reset the form
+    event.target.reset();
+  } else {
+    alert("Please fill out all fields.");
+  }
+});
+
+// Handle FREE Credit Report button click
+document.querySelector(".free-report-btn").addEventListener("click", function (event) {
+  const name = localStorage.getItem("name");
+  const email = localStorage.getItem("email");
+
+  if (!name || !email) {
+    // Block navigation and prompt the user
+    event.preventDefault();
+    alert("Please submit your name and email before proceeding.");
+  } else {
+    // Allow navigation to financial form
+    window.location.href = "/financial_form";
+  }
+});
+
+    </script>
+  </body>
+</html>

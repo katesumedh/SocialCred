@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SocialCred</title>
+    <style>
+      body {
+        font-family: "Roboto", Arial, sans-serif;
+        background: linear-gradient(140deg, #fff9fa, #f5e6e6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+      }
+      .container p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+      h2 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .form-group {
+        display: flex;
+        align-items: center; /* Vertically align the label and input */
+        justify-content: flex-start; /* Space between label and input */
+        margin-bottom: 15px;
+      }
+
+      form label {
+        display: block;
+        text-align: left;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #0a0909;
+        margin-right: 10px;
+        
+      }
+
+      form input[type="text"] {
+        width: 30%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        background-color: #fff9fa;
+        font-size: 1em;
+        margin-right: 50px;
+      }
+
+      form input[type="file"] {
+        display: block;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+
+      form input[type="submit"] {
+        background-color: #82373b;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+      }
+
+      form input[type="submit"]:hover {
+        background-color: #4e1518;
+      }
+
+      .result {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+      }
+
+      .result h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .result p {
+        font-size: 1em;
+        margin: 5px 0;
+      }
+
+      .result p.positive {
+        color: #4caf50;
+      }
+
+      .result p.negative {
+        color: #f44336;
+      }
+
+      .result p.neutral {
+        color: #9e9e9e;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 1.8em;
+        }
+
+        form input[type="submit"] {
+          padding: 10px 20px;
+          font-size: 0.9em;
+        }
+
+        .result h3 {
+          font-size: 1.3em;
+        }
+
+        .result p {
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        
+      <h2>Step 2</h2>
+      <p><strong>Discover a more personalized credit score with insights drawn from your social media behavior.</strong></p>
+      <form
+        action="/social_media_score/analyze"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="textbox">Financial Performance:</label>
+          <input
+            type="text"
+            id="textbox"
+            name="textbox_value"
+            value="{{ textbox_value }}"
+            readonly
+          />
+        </div>
+
+        <label for="file1">Twitter:</label>
+        <input type="file" id="file1" name="file1" accept=".csv" required />
+
+        <label for="file2">LinkedIn:</label>
+        <input type="file" id="file2" name="file2" accept=".csv" required />
+
+        <label for="file3">Instagram:</label>
+        <input type="file" id="file3" name="file3" accept=".csv" required />
+
+        <input type="submit" value="Analyze" />
+      </form>
+
+      {% if result %}
+      <div class="result">
+        <h3>Analysis Result:</h3>
+        <p class="{{ result.label.lower() }}">
+          {{ result.label }} (Confidence: {{ result.score | round(2) }})
+        </p>
+        <p>Credit Score: {{ result.credit_score }}</p>
+      </div>
+      <div style="margin-top: 20px;">
+        <form action="/social_media_score/report" method="GET">
+          <!-- Include necessary fields -->
+          <input type="hidden" id="name" name="name" value="">
+          <input type="hidden" id="email" name="email" value="">
+          <!-- <input type="hidden" id="predictedValue" name="predictedValue" value="{{ textbox_value }}"> -->
+          <input type="hidden" id="credit_score" name="credit_score" value="{{ result.credit_score }}">
+      
+          <button type="submit" style="background-color: #4caf50; color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: background-color 0.3s;">
+            Generate Report
+          </button>
+        </form>
+      </div>
+      
+      <script>
+        // Retrieve data from localStorage
+        const name = localStorage.getItem('name');
+        const email = localStorage.getItem('email');
+      
+        if (name) document.getElementById('name').value = name;
+        if (email) document.getElementById('email').value = email;
+        
+      </script>
+    {% endif %}
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f5f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+header {
+  background-color: #82373b;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover {
+  background-color: #4e1518;
+  border-radius: 5px;
+}
+
+/* Main Section Layout */
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+/* Left Column */
+.left-column {
+  width: 60%;
+}
+
+/* Icon Section */
+.icon-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Makes the section taller to cover most of the left column */
+  background-color: #e9f0f7;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.icon-section img {
+  width: 100%; /* Scales the icon to take up more space in the section */
+  height: 100%; /* Maintains aspect ratio */
+}
+/* Credit Information Section */
+#info {
+  text-align: left;
+}
+
+#info h2 {
+  font-size: 2rem;
+  color: #c13f47;
+  margin-bottom: 1.5rem;
+}
+/* General Styles for FAQ Section */
+/* General Styles for FAQ Section */
+#faq {
+  padding: 40px 2rem;
+  background: linear-gradient(140deg, #fff9fa, #f6d5d5);
+  margin-top: 20px;
+}
+
+#faq h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#faq .faq-item {
+  background: #fccbcf;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+#faq .faq-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+#faq .faq-item p {
+  font-size: 1rem;
+  color: #555;
+  display: none; 
+  margin-top: 10px;
+}
+
+/* Accordion Styles */
+.accordion {
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.accordion:hover {
+  transform: scale(1.02);
+}
+
+.accordion .question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.accordion .answer {
+  display: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  border-top: 1px solid #ddd;
+}
+
+/* Active accordion styles */
+.accordion.active .answer {
+  display: block;
+}
+
+/* Right Column */
+.right-column {
+  width: 40%;
+}
+
+/* User Form Section */
+#user-form {
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#user-form h2 {
+  font-size: 1.8rem;
+  color: #82373b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#user-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#user-form input[type="text"],
+#user-form input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#user-form form {
+  display: flex;
+  flex-direction: column; /* Stack the form elements vertically */
+}
+#user-form button {
+  align-self: center;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #db4b55;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+}
+
+#user-form button:hover {
+  background-color: #e92f38;
+}
+#right-column #get-report {
+  margin-top: 50px; /* Adds space between the form and the button */
+  width: 100%; /* Ensure the button takes up the full width */
+  display: flex;
+  justify-content: center; /* Center align the button */
+}
+
+.free-report-btn {
+  background-color: #82373b; /* Blue background */
+  color: white; /* White text */
+  padding: 20px 0; /* Vertical padding, adjust horizontal padding to match the form */
+  font-size: 1rem; /* Font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  width: 100%; /* Make the button the same width as the form */
+  max-width: 500px; /* Set a maximum width to prevent button from stretching too much */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.free-report-btn:hover {
+  background-color: #4e1518; 
+  transform: scale(1.05); 
+}
+
+.free-report-btn:active {
+  background-color: #4e1518; 
+}
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    margin-bottom: 20px;
+    flex: 1 100%;
+  }
+
+  #faq {
+    padding: 20px;
+  }
+}
